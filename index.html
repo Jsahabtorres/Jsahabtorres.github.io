@@ -3,26 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Artist Website</title>
+  <title>Portafolio musical de José Elías Sahab Torres</title>
 </head>
 <body>
-  <h1>Welcome to my website!</h1>
-  <img src="Professional headshot.jpeg" alt="Retrato profesional de José Elías Sahab Torres" width="300">
-  <p>Here you will find all my information as an artist.</p>
+  <header>
+    <nav aria-label="Idioma / Language">
+      <p>
+        <span id="language-label">Idioma:</span>
+        <button type="button" id="spanish-button" lang="es" aria-pressed="true">Español</button>
+        <button type="button" id="english-button" lang="en" aria-pressed="false">English</button>
+      </p>
+    </nav>
 
-  <h2>Contact Information</h2>
-  <p>Email: <a href="mailto:joseeliassahab@gmail.com">joseeliassahab@gmail.com</a></p>
-  <p>Phone: <a href="tel:+16179552972">+1 617-955-2972</a></p>
+    <h1 id="page-heading">Bienvenido a mi página web</h1>
+    <img
+      src="Professional headshot.jpeg"
+      alt="Retrato profesional de José Elías Sahab Torres"
+      width="300"
+    >
+    <p id="intro">Aquí encontrarás toda mi información como músico.</p>
+  </header>
 
-  <h2>Musical Information</h2>
-  <p>Drummer, percussionist and producer who focuses in several music styles. Ranging from rock and jazz to rhythms from Cuba, Caribian islands and South America, with 10 years of experience playing the drum set. He pretends to transmit his ideas through his music to share them with the audience, and he wants to keep expanding the influence of the latin music in the industry.</p>
+  <main>
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Información de contacto</h2>
+      <p><span id="email-label">Correo electrónico:</span> <a href="mailto:joseeliassahab@gmail.com">joseeliassahab@gmail.com</a></p>
+      <p><span id="phone-label">Teléfono:</span> <a href="tel:+16179552972">+1 617-955-2972</a></p>
+    </section>
 
-  <h2>Resume</h2>
-  <p><a href="resume-jose-elias-sahab.pdf" download>Download my Resume</a></p>
+    <section aria-labelledby="music-heading">
+      <h2 id="music-heading">Información musical</h2>
+      <p id="music-description">Baterista, percusionista y productor que trabaja con diversos estilos musicales, desde el rock y el jazz hasta los ritmos de Cuba, el Caribe y Sudamérica. Con 10 años de experiencia tocando la batería, busca compartir sus ideas musicales con el público y seguir ampliando la influencia de la música latina en la industria.</p>
+    </section>
 
-  <h2>Social Media</h2>
-  <p><a href="https://youtube.com/@jsahabmusic?si=gj5XW3Necc-R5WM-">YouTube</a></p>
-  <p><a href="https://www.instagram.com/pepe_sahab_19?igsh=NGI0aDE5amZjY2I5&utm_source=qr">Instagram</a></p>
-  <p><a href="https://on.soundcloud.com/fEf5yzWuzagZA55S7">SoundCloud</a></p>
+    <section aria-labelledby="resume-heading">
+      <h2 id="resume-heading">Currículum</h2>
+      <p><a id="resume-link" href="resume-jose-elias-sahab.pdf" download>Descargar mi currículum en PDF</a></p>
+    </section>
+
+    <section aria-labelledby="social-heading">
+      <h2 id="social-heading">Redes sociales</h2>
+      <p><a href="https://youtube.com/@jsahabmusic?si=gj5XW3Necc-R5WM-">YouTube</a></p>
+      <p><a href="https://www.instagram.com/pepe_sahab_19?igsh=NGI0aDE5amZjY2I5&utm_source=qr">Instagram</a></p>
+      <p><a href="https://on.soundcloud.com/sWPGn250QD71dZ0oqY">SoundCloud</a></p>
+    </section>
+  </main>
+
+  <script>
+    const translations = {
+      es: {
+        title: "Portafolio musical de José Elías Sahab Torres",
+        languageLabel: "Idioma:",
+        pageHeading: "Bienvenido a mi página web",
+        imageAlt: "Retrato profesional de José Elías Sahab Torres",
+        intro: "Aquí encontrarás toda mi información como músico.",
+        contactHeading: "Información de contacto",
+        emailLabel: "Correo electrónico:",
+        phoneLabel: "Teléfono:",
+        musicHeading: "Información musical",
+        musicDescription: "Baterista, percusionista y productor que trabaja con diversos estilos musicales, desde el rock y el jazz hasta los ritmos de Cuba, el Caribe y Sudamérica. Con 10 años de experiencia tocando la batería, busca compartir sus ideas musicales con el público y seguir ampliando la influencia de la música latina en la industria.",
+        resumeHeading: "Currículum",
+        resumeLink: "Descargar mi currículum en PDF",
+        socialHeading: "Redes sociales"
+      },
+      en: {
+        title: "Music Portfolio | José Elías Sahab Torres",
+        languageLabel: "Language:",
+        pageHeading: "Welcome to my website",
+        imageAlt: "Professional headshot of José Elías Sahab Torres",
+        intro: "Here you can find information about me as a musician.",
+        contactHeading: "Contact Information",
+        emailLabel: "Email:",
+        phoneLabel: "Phone:",
+        musicHeading: "Musical Background",
+        musicDescription: "Drummer, percussionist, and producer working across a range of musical styles, from rock and jazz to rhythms from Cuba, the Caribbean, and South America. With 10 years of drum set experience, he aims to share his musical ideas with audiences and continue expanding Latin music's influence in the industry.",
+        resumeHeading: "Résumé",
+        resumeLink: "Download my résumé (PDF)",
+        socialHeading: "Social Media"
+      }
+    };
+
+    const elements = {
+      languageLabel: document.getElementById("language-label"),
+      pageHeading: document.getElementById("page-heading"),
+      intro: document.getElementById("intro"),
+      contactHeading: document.getElementById("contact-heading"),
+      emailLabel: document.getElementById("email-label"),
+      phoneLabel: document.getElementById("phone-label"),
+      musicHeading: document.getElementById("music-heading"),
+      musicDescription: document.getElementById("music-description"),
+      resumeHeading: document.getElementById("resume-heading"),
+      resumeLink: document.getElementById("resume-link"),
+      socialHeading: document.getElementById("social-heading")
+    };
+
+    function setLanguage(language) {
+      const text = translations[language];
+      document.documentElement.lang = language;
+      document.title = text.title;
+      Object.keys(elements).forEach((key) => {
+        elements[key].textContent = text[key];
+      });
+      document.querySelector("img").alt = text.imageAlt;
+      document.getElementById("spanish-button").setAttribute("aria-pressed", String(language === "es"));
+      document.getElementById("english-button").setAttribute("aria-pressed", String(language === "en"));
+    }
+
+    document.getElementById("spanish-button").addEventListener("click", () => setLanguage("es"));
+    document.getElementById("english-button").addEventListener("click", () => setLanguage("en"));
+  </script>
 </body>
 </html>
